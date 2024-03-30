@@ -9,6 +9,22 @@ bot.help(ctx => ctx.reply('Help command'));
 
 bot.settings(ctx => ctx.reply('Settings'));
 
+bot.command('stop', (ctx) => {
+	return ctx.reply('Stop command');
+});
+
+bot.mention('botfather', (ctx) => {
+	return ctx.reply('botfather mentioned');
+});
+
+bot.phone('+79955007338', (ctx) => {
+	ctx.reply('phone number');
+});
+
+bot.hashtag('bot', (ctx) => {
+	ctx.reply('bot hashtag');
+});
+
 bot.launch().then((res) => {
 	console.log('Started');
 }).catch((err) => console.log(err));
