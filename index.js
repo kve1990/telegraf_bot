@@ -25,6 +25,10 @@ bot.hashtag('bot', (ctx) => {
 	ctx.reply('bot hashtag');
 });
 
+bot.command('ctx', (ctx) => {
+	return ctx.reply(ctx.update.message.from.username);
+});
+
 bot.launch().then((res) => {
 	console.log('Started');
 }).catch((err) => console.log(err));
