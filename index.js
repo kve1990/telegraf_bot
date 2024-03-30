@@ -3,6 +3,11 @@ const bot = new Telegraf(
 	'7145260293:AAGzJMYpk48sNEWJ7NgXCzp3QMm1LshowJg'
 );
 
+bot.use(async (ctx, next) => {
+	ctx.reply(Date.now());
+	return await next(ctx);
+});
+
 bot.start(ctx => ctx.reply('Start command'));
 
 bot.help(ctx => ctx.reply('Help command'));
